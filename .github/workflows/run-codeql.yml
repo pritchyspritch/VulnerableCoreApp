@@ -1,0 +1,26 @@
+name: Run CodeQL SAST Scan - .NET
+
+permissions: 
+  actions: read
+  pull-requests: write
+  security-events: write
+  contents: read
+
+on:
+  schedule: 
+    - cron: '0 8 * * *' 
+  push:
+    branches: [ main, master ] 
+  pull_request:
+    types: [ opened, reopened ] 
+  workflow_dispatch:
+
+jobs:
+  run-codeql:
+    uses: pritchyspritch/dfe-github-actions/.github/workflows/reusable-workflow-sast.yml@master 
+    with:
+      language: 'csharp' 
+      dotnet_project_locations: '["./"]' 
+      dotnet_version: '2.0.*' 
+    # secrets:
+    #   CODEQL_AUTHENTICATION_PRIVATE_KEY: ${{ secrets.CODEQL_AUTHENTICATION_PRIVATE_KEY }} 
