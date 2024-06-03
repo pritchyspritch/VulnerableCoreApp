@@ -22,5 +22,5 @@ jobs:
       language: 'csharp' 
       dotnet_project_locations: '["./"]' 
       dotnet_version: '2.0.*' 
-    # secrets:
-    #   CODEQL_AUTHENTICATION_PRIVATE_KEY: ${{ secrets.CODEQL_AUTHENTICATION_PRIVATE_KEY }} 
+    secrets:
+      CODEQL_AUTHENTICATION_PRIVATE_KEY: ${{ secrets.CODEQL_AUTHENTICATION_PRIVATE_KEY }} 
