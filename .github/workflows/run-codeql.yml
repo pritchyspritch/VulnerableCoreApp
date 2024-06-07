@@ -17,7 +17,7 @@ on:
 
 jobs:
   run-codeql:
-    uses: pritchyspritch/dfe-github-actions/.github/workflows/reusable-workflow-sast.yml@master 
+    uses: pritchyspritch/dfe-github-actions/.github/workflows/reusable-workflow-codeql-sast.yml@master 
     with:
       language: 'csharp' 
       dotnet_project_locations: '["./"]' 
